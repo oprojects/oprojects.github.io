@@ -1,4 +1,4 @@
-name: Arcana
-description: Arcana template for Jekyll
+name: Oproject
+description: Scientific Software
 paginate: 10
-baseurl: '/Arcana-Jekyll-Theme'
+baseurl: ''
