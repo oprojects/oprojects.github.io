@@ -1,33 +1,62 @@
 <div id="sidebar">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Menu - Categories</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#menu" ).menu({
-      items: "> :not(.ui-widget-header)"
-    });
-  } );
-  </script>
-  <style>
-  .ui-menu { width: 200px; }
-  .ui-widget-header { 
-  padding: 0.2em;     
-  background-color: #2e2e2e;
-  color: #b9b9b9;
-  font-size: 14px;
-  }
-  </style>
-<ul id="menu">
-  <li class="ui-widget-header"><div><h3>Menu</h3></div></li>
-  <li><div>Option 1</div></li>
-  <li><div>Option 2</div></li>
-  <li><div>Option 3</div></li>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery UI Menu - Categories</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<style>
+.ui-menu { width: 100%; }
+.ui-widget-header{ 
+padding: 0.3em;     
+background-color: #2e2e2e;
+color: #b9b9b9;
+font-size: 14px;
+}
+/* style="text-align:center;margin:0;padding:0;width: 100%;border:0px;" */
+</style>
+
+<ul id="menu" >
+<li class="ui-widget-header"><div><h3>Menu</h3></div></li>
+<li><div>Option 1</div></li>
+<li><div>Option 2</div></li>
+<li><div>Option 3</div></li>
 </ul>
-	<!-- Sidebar -->
+
+
+<br><br>
+<ul id="menu" >
+<li class="ui-widget-header"><div><h3>Related Sites</h3></div></li>
+<li><div><a href="http://root.cern.ch"><img style="display:block;width:100%;" src="{{ site.baseurl }}/img/ROOT.png"/></a></div></li>
+<li><div><a href="http://iml.cern.ch"><img style="display:block;width:100%;" src="{{ site.baseurl }}/img/IML.png"/></a></div></li>
+<li><div><a href="http://hepsoftwarefoundation.org/"><img style="display:block;width:100%;" src="{{ site.baseurl }}/img/HSF.png"/></a></div></li>
+</ul>
+
+<br><br>
+<ul id="menu">
+<li class="ui-widget-header"><div><h3>Visits</h3></div></li>
+
+<li><div>
+<script type="text/javascript"  id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=s-ZwLtDV3vAVag59SNAmS_0v59Sxj_hvEp1gTsnd4ds"></script>
+</div></li>
+
+<li><div  style="visibility: hidden">
+    <embed class="map" style="display:block;width:100%;" src="http://widgets.amung.us/flash/v2map.swf" quality="high"
+    pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent"
+    allowScriptAccess="always" allowNetworking="all" type="application/x-shockwave-flash"
+    flashvars="wausitehash=dtpbzf2j1g7f&map=green&pin=default-blue&link=no"
+    />
+    <div>
+        <a href="http://whos.amung.us/stats/dtpbzf2j1g7f/">
+            <img src="http://maps.amung.us/ping/dtpbzf2j1g7f.gif"
+            border="0" />
+        </a>
+    </div>
+</div>
+</li>
+</ul>
+
+    <!-- Sidebar -->
 <!-- 	{% for post in site.posts offset: 0 limit: 2 %} -->
 <!-- 		<section> -->
 <!-- 			<h3>{{ post.title }}</h3> -->
@@ -37,5 +66,5 @@
 <!-- 			</footer> -->
 <!-- 		</section> -->
 <!-- 	{% endfor %} -->
-	
+    
 </div>
