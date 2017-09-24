@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Arcana by HTML5 UP</title>
+		<title>OProject</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -29,19 +29,26 @@
 	<body>
 
 		<!-- Header -->
-			<div id="header">
+			<div id="header" style="padding-top: 0px;" >
 				<!-- Logo -->
-				<img src="{{ site.baseurl }}/img/obanner.png" height="40%" width="40%">
+				<table>
+				<tr>
+                    <th align="left" style="padding-left: 8.3333333333%;display:block;">
+                        <img src="{{ site.baseurl }}/img/obanner-lhc.png" height="40%" width="40%">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
                 <a href="{{ site.baseurl }}/index.html" id="logo"> </a>
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
 							{% assign current = page.url | downcase | split: '/' %}
-							<li {% if current[1] == 'index.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/index.html">Home</a></li>
+							<li {% if current[1] == 'index.html' %} class="current"{% endif %}><a href="{{ site.baseurl }}/index.html">Home</a></li>
 							<li>
 								<a href="">Projects</a>
 								<ul style="text-align: left;">
-									<li {% if current[1] == 'index.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/pages/ROOTR.html">ROOT-R</a></li>
+									<li {% if current[1] == 'index.html' %} class="current"{% endif %}><a href="{{ site.baseurl }}/pages/ROOTR.html">ROOT-R</a></li>
 									<li><a href="#">RMVA</a></li>
 									<li><a href="#">PyMVA</a></li>
 									<li><a href="#">TMVA</a></li>
@@ -115,7 +122,8 @@
                                 </ul>
                             </li>
 							<li>
-								<a href="">About</a>
+<!-- 								<a href="">About</a> -->
+								<li {% if current[1] == 'index.html' %} class="current"{% endif %}><a href="{{ site.baseurl }}/pages/About.html">About</a></li>
                             </li>
 <!-- 							<li {% if current[1] == 'ROOTR.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/pages/ROOTR.html">ROOTR</a></li> -->
 <!-- 							<li {% if current[1] == 'blog' %}class="current"{% endif %}><a href="{{ site.baseurl }}/blog">Blog</a></li> -->
@@ -125,5 +133,7 @@
 <!-- 							<li {% if current[1] == 'no-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/no-sidebar.html">No Sidebar</a></li> -->
 						</ul>
 					</nav>
-
+                    </th>
+                   </tr>
+                 </table>  
 			</div>
