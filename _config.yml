@@ -1,5 +1,6 @@
 name: OProject
 description: Scientific Software
-plugins: [jekyll-paginate]
+plugins: [jekyll-assets, jekyll-paginate, sass, github-pages]
 paginate: 10
+highlighter: rouge
 baseurl: ''

@@ -1,3 +1,5 @@
 all:
 	rm -rf _site
-	jekyll serve
+	bundle exec jekyll serve
+install:Gemfile
+	bundle install
