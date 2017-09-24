@@ -22,9 +22,11 @@ layout: content
 	<p>Parrafo</p>
 	
 	<h3 id="UsersGuide">Users Guide</h3>
-{% highlight C++ %}
+<!--{% highlight C++ %}-->
+``` cpp
 using namespace std;
 #include<iostream>
-{% endhighlight %}
+```
+<!-- {% endhighlight %} -->
 
 </article>
