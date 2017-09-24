@@ -10,6 +10,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+		<link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico" type="image/x-icon">
 		<!--[if lte IE 8]><script src="{{ site.baseurl }}/assets/css/ie/html5shiv.js"></script><![endif]-->
 		<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 		<script src="{{ site.baseurl }}/assets/js/jquery.dropotron.min.js"></script>
@@ -38,7 +39,7 @@
 		<!-- Header -->
 			<div id="header">
 				<!-- Logo -->
-				<img src="{{ site.baseurl }}/img/OLogo.png" height="40%" width="40%">
+				<img src="{{ site.baseurl }}/img/obanner.png" height="40%" width="40%">
                 <a href="{{ site.baseurl }}/index.html" id="logo"> </a>
 				<!-- Nav -->
 					<nav id="nav">
@@ -46,12 +47,15 @@
 							{% assign current = page.url | downcase | split: '/' %}
 							<li {% if current[1] == 'index.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/index.html">Home</a></li>
 							<li>
-								<a href="">Dropdown</a>
-								<ul>
-									<li><a href="#">Lorem dolor</a></li>
-									<li><a href="#">Magna phasellus</a></li>
-									<li><a href="#">Etiam sed tempus</a></li>
-									<li>
+								<a href="">Projects</a>
+								<ul style="text-align: left;">
+									<li {% if current[1] == 'index.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/pages/ROOTR.html">ROOT-R</a></li>
+									<li><a href="#">RMVA</a></li>
+									<li><a href="#">PyMVA</a></li>
+									<li><a href="#">TMVA</a></li>
+									<li><a href="#">ROOT Jupyter Kernel</a></li>
+									<li><a href="#">ROOT Mpi</a></li>
+<!--									<li>
 										<a href="">Submenu</a>
 										<ul>
 											<li><a href="#">Lorem dolor</a></li>
@@ -60,15 +64,73 @@
 											<li><a href="#">Etiam nisl</a></li>
 											<li><a href="#">Veroeros feugiat</a></li>
 										</ul>
-									</li>
-									<li><a href="#">Veroeros feugiat</a></li>
+									</li>-->
+<!-- 									<li><a href="#">Veroeros feugiat</a></li> -->
 								</ul>
 							</li>
-							<li {% if current[1] == 'blog' %}class="current"{% endif %}><a href="{{ site.baseurl }}/blog">Blog</a></li>
-							<li {% if current[1] == 'left-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/left-sidebar.html">Left Sidebar</a></li>
-							<li {% if current[1] == 'right-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/right-sidebar.html">Right Sidebar</a></li>
-							<li {% if current[1] == 'two-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/two-sidebar.html">Two Sidebar</a></li>
-							<li {% if current[1] == 'no-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/no-sidebar.html">No Sidebar</a></li>
+							<li>
+								<a href="">Academic Events</a>
+								<ul style="text-align: left;">
+									<li><a href="#">GSoC 2014</a></li>
+ 									<li><a href="#">GSoC 2015</a></li>
+ 									<li><a href="#">CHEP 2015</a></li>
+									<li><a href="#">ROOT Workshop 2015</a></li>
+									<li><a href="#">Data Science @ LHC 2015</a></li>
+									<li><a href="#">ACAT 2016</a></li>
+									<li><a href="#">HEP Software Foundation Workshop 2016</a></li>
+									<li><a href="#">CERN Studentship 2016</a></li>
+									<li><a href="#">GSOC 2016</a></li>
+									<li><a href="#">CHEP 2016</a></li>
+                                </ul>
+                            </li>
+							<li>
+								<a href="">Seminars</a>
+								<ul style="text-align: left;">
+									<li><a href="#">Seminar Data Analysis in High Energy Physics</a></li>
+                                </ul>
+                            </li>
+							<li>
+								<a href="">Papers</a>
+								<ul style="text-align: left;">
+									<li><a href="https://inspirehep.net/search?p=find+eprint+1605.02684">Les Houches 2015</a></li>
+									<li><a href="http://iopscience.iop.org/article/10.1088/1742-6596/762/1/012043">ACAT 2017 IOP</a></li>
+                                </ul>
+                            </li>
+							<li>
+								<a href="">Documentation</a>
+								<ul style="text-align: left;">
+									<li><a href="">Development Guide</a></li>
+									<li><a href="">TMVA Deep Learning (DNN)</a></li>
+									<li><a href="https://docs.google.com/document/d/1o9S0XE4ly4-LZh9y96DG-U7HH61m2cHboV6xSt1tI0g/edit#heading=h.l4vnrli7pz7r">ML CWP</a></li>
+                                </ul>
+                            </li>
+							<li>
+								<a href="">Hub</a>
+                            </li>
+							<li>
+								<a href="">Related Talks</a>
+								<ul style="text-align: left;">
+									<li><a href="https://indico.cern.ch/event/349459/contributions/822782/">How to bring Modern Machine Learning to HEP</a></li>
+									<li><a href="https://indico.cern.ch/event/353906/contributions/2224906/">Machine Learning Software Development in HEP</a></li>
+									<li><a href="https://indico.cern.ch/event/453653/contributions/1951524/">Report on recent work to integrate ML tools in ROOT</a></li>
+									<li><a href="http://indico.cern.ch/event/505613/contributions/2228328/">Status and Evolution of ROOT</a></li>
+									<li><a href="http://indico.cern.ch/event/450743/contributions/1116433/attachments/1220997/1785026/iCSC-KECK.pptx">Multivariate Classification and Machine Learning in HEP</a></li>
+									<li><a href="https://indico.cern.ch/event/569308/">TMVA Developers Meeting</a></li>
+									<li><a href="https://indico.cern.ch/event/574160/">ALICE Workshop on HEP Statistics (ML Lecture)</a></li>
+									<li><a href=""></a></li>
+									<li><a href=""></a></li>
+									<li><a href=""></a></li>
+                                </ul>
+                            </li>
+							<li>
+								<a href="">About</a>
+                            </li>
+<!-- 							<li {% if current[1] == 'ROOTR.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/pages/ROOTR.html">ROOTR</a></li> -->
+<!-- 							<li {% if current[1] == 'blog' %}class="current"{% endif %}><a href="{{ site.baseurl }}/blog">Blog</a></li> -->
+<!-- 							<li {% if current[1] == 'left-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/left-sidebar.html">Left Sidebar</a></li> -->
+<!-- 							<li {% if current[1] == 'right-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/right-sidebar.html">Right Sidebar</a></li> -->
+<!-- 							<li {% if current[1] == 'two-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/two-sidebar.html">Two Sidebar</a></li> -->
+<!-- 							<li {% if current[1] == 'no-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/no-sidebar.html">No Sidebar</a></li> -->
 						</ul>
 					</nav>
 

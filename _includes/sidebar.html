@@ -1,14 +1,41 @@
 <div id="sidebar">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Menu - Categories</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#menu" ).menu({
+      items: "> :not(.ui-widget-header)"
+    });
+  } );
+  </script>
+  <style>
+  .ui-menu { width: 200px; }
+  .ui-widget-header { 
+  padding: 0.2em;     
+  background-color: #2e2e2e;
+  color: #b9b9b9;
+  font-size: 14px;
+  }
+  </style>
+<ul id="menu">
+  <li class="ui-widget-header"><div><h3>Menu</h3></div></li>
+  <li><div>Option 1</div></li>
+  <li><div>Option 2</div></li>
+  <li><div>Option 3</div></li>
+</ul>
 	<!-- Sidebar -->
-	{% for post in site.posts offset: 0 limit: 2 %}
-		<section>
-			<h3>{{ post.title }}</h3>
-			{{ post.excerpt }}
-			<footer>
-				<a href="{{ site.baseurl }}{{ post.url }}" class="button">Continue Reading</a>
-			</footer>
-		</section>
-	{% endfor %}
+<!-- 	{% for post in site.posts offset: 0 limit: 2 %} -->
+<!-- 		<section> -->
+<!-- 			<h3>{{ post.title }}</h3> -->
+<!-- 			{{ post.excerpt }} -->
+<!-- 			<footer> -->
+<!-- 				<a href="{{ site.baseurl }}{{ post.url }}" class="button">Continue Reading</a> -->
+<!-- 			</footer> -->
+<!-- 		</section> -->
+<!-- 	{% endfor %} -->
 	
 </div>
