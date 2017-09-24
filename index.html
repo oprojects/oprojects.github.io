@@ -16,7 +16,7 @@ layout: default
 						<!-- Content -->
 					
 					    <!-- Sidebar -->
-	{% for post in site.posts offset: 0 limit: 2 %}
+                        {% for post in site.posts offset: 0 limit: 2 %}
 							<article>
 								<header>
 									<h2>{{ post.title }}</h2>
@@ -26,7 +26,7 @@ layout: default
                                 <a href="{{ site.baseurl }}{{ post.url }}" class="button">Continue Reading</a>
                                 </footer>
                             </article >
-    {% endfor %}
+                            {% endfor %}
 
 								
 <!-- 								<span class="image featured"><img src="{{ site.baseurl }}/assets/images//obanner.png" alt="" /></span> -->

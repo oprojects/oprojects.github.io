@@ -1,21 +1,13 @@
 ---
-title: ROOT-R
-layout: default
+title: ROOTR
+layout: content
 ---
 	
-<!-- Main -->
-	<section class="wrapper style1">
-		<div class="container">
-			<div class="row double">
-				<div class="4u">
-					{% include sidebar.html %}
-				</div>
-				<div class="8u skel-cell-important">
-					<div id="content">
-
-						<!-- Content -->
-					
-							<article>
+{% highlight c++ %}
+#include<iostream>
+using namespace std;
+{% endhighlight %}
+<article>
 								<header>
 									<h2>ROOT-R</h2>
 									<p>R Interface for ROOT</p>
@@ -35,10 +27,4 @@ layout: default
 								<h3 id="UsersGuide">Users Guide</h3>
 								<p></p>
 
-							</article>
-				
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>			
+</article>

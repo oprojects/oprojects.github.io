@@ -1,4 +1,5 @@
-name: Oproject
+name: OProject
 description: Scientific Software
+plugins: [jekyll-paginate]
 paginate: 10
 baseurl: ''
