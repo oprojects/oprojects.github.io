@@ -21,17 +21,20 @@ layout: default
 								<header>
 									<h2>{{ post.title }}</h2>
 								</header>
-								{{ post.excerpt }}
+								<div class="row">
+                                    <div class="8u">
+                                    <br>
+                                        <section class="box post">
+                                            <a href="#" class="image left"><img style="width:200px;height:200;" src="{{ site.baseurl }}{{ post.featured }}" alt="" /></a>
+                                            <div class="inner">{{ post.content }}</div>
+                                       </section>
+                                    </div>
+                                </div>
                                 <footer>
-                                <a href="{{ site.baseurl }}{{ post.url }}" class="button">Continue Reading</a>
+									<h3><p>Posted {{ post.date | date_to_string }}</p></h3>
                                 </footer>
                             </article >
                             {% endfor %}
-
-								
-<!-- 								<span class="image featured"><img src="{{ site.baseurl }}/assets/images//obanner.png" alt="" /></span> -->
-								
-				
 					</div>
 				</div>
 			</div>
