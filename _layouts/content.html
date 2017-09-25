@@ -7,9 +7,14 @@
 				{% include sidebar.html %}
 			</div>
 			<div class="9u skel-cell-important">
+				
 				<div id="content" >
+				   <h1>{{ page.title }}</h>
+				   <br><br>
+				   <h1> Table of Contents</h1>
+				   <br>
 				   <!-- Content -->
-				   {{ content }}				
+				   {{ content | toc}}				
 				</div>
 			</div>
 		</div>
