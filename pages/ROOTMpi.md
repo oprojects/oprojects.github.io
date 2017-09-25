@@ -2,8 +2,9 @@
 title: Message Passing Interface for ROOT
 layout: content
 toc: true
+h_min: 0
+h_max: 4
 ---
-
 
 * Table of Contents 
 {:toc}
@@ -43,7 +44,7 @@ Install [OpenMPI](https://www.open-mpi.org/) or [MPICH](https://www.mpich.org/)
 
 To compile ROOT MPI lets to create a compilation directory and to activate it use cmake -Dmpi=ON ..
 
-``` {.sh}
+``` sh
 mkdir compile
 cd compile
 cmake -Dmpi=ON ..
@@ -91,6 +92,8 @@ Memory Window|Class to shared regions of memory with Remote Access Memory using 
 
 
 ## rootmpi (command line tool)
+-----------
+
 Normally the mpi binaries are execute with the command mpirun or mpiexec, that lets to launch the binary code starting the communication system, but in ROOTMpi you can execute ROOT macros without compile it like is usual to run ROOT code.
 rootmpi(executable) is a command line tool that helps you run binary code, root macros or compiling source code to generate binary code.
 Internally to run a macro it launch mpirun with root interpreter, that allows to run the multiple processes in a distrubute system interpreting the code.
@@ -102,6 +105,7 @@ Internally to run a macro it launch mpirun with root interpreter, that allows to
 
 
 ### rootmpi (command line tool) with Python
+-----------
 In the case of python, rootmpi allows to run python scripts in a similar way that ROOT macros.
 
 ![Execution Diagram](pictures/rmpi3.png)
@@ -124,7 +128,7 @@ You can find full list of option for OpenMpi or Mpich at:
 
 ### Example of machine file
 
-``` {.sh}
+``` sh
 # This is an example hostfile.
 # (taken from https://www.open-mpi.org/faq/?category=running#mpirun-hostfile)
 # Comments begin with #
@@ -150,9 +154,10 @@ node.example.com slots=4 max-slots=4
  * -memstat : run with memory usage monitoring
 
 ## Hello world C++
+-----------
 This is a basic example that just print the host name and the rank id.
 save it like hello.C
-``` {.cpp}
+``` cpp
 using namespace ROOT::Mpi;
 void hello()
 {
@@ -170,11 +175,11 @@ the wn1 and wn2 are aliases for worker node.<br>
 -b ROOT batch mode <br>
 -pernode one proccess per node <br>
 
-``` {.sh}
+``` sh
 rootmpi -np 2 -H wn6,wn7 -b -pernode hello.C
 ```
 the output mus be something like 
-``` {.sh}
+``` sh
 Processing hello.C ...
 
 Processing hello.C ...
@@ -182,9 +187,10 @@ Hello from process 0 of 2 in host wn6
 Hello from process 1 of 2 in host wn7
 ```
 ## Hello world Python
+-----------
 This is a basic example that just print the host name and the rank id.
 save it like hello.py
-``` {.py}
+``` py
 from ROOT import Mpi
 from ROOT.Mpi import TEnvironment, COMM_WORLD
 
@@ -196,16 +202,17 @@ if __name__ == "__main__":
     hello()
 ```
 To execute it just use rootmpi command line tools.
-``` {.sh}
+``` sh
 rootmpi -np 2 -H wn6,wn7 -b -pernode hello.py
 ```
 the output mus be something like 
-``` {.sh}
+``` sh
 Hello from process 0 of 2 in host wn6
 Hello from process 1 of 2 in host wn7
 ``` 
 
 ## ROOT Mpi Basics
+-----------
 ROOT Mpi can to communicate processes between multiple nodes using messages,
 according to the different schemas the communiction, peer to peer or collectives
 like gather, scatter, broadcast etc..
@@ -219,19 +226,20 @@ the TIntraCommunicator object ROOT::Mpi::COMM_WORLD, this global object
 allows to use the multiple schemas of communication throw its methods.
 
 ## Blocking communictaion
+-----------
 
 In the blocking communication the execution is "synchronous" and it stop while the message is received,if the tag id is wrong in the message the execution will be blocked forever.
 
 ### Peer to Peer communication
+-----------
+
 Peer to peer communication is the most basic communication operation,
 basically is send and receiv a message between two processes.
 
-<center>
 ![Peer to Peer](pictures/rmpip2p.png)
-</center>
 
 <b>Example C++</b>
-``` {.cpp}
+``` cpp
 using namespace ROOT::Mpi;
 void p2p()
 {
@@ -277,11 +285,11 @@ void p2p()
 }
 ```
 Execute with rootmpi command line tool
-``` {.sh}
+``` sh
 rootmpi  -np 2 p2p.C
 ```
 The output is something like 
-``` {.sh}
+``` sh
 Processing p2p.C ...
 
 Processing p2p.C ...
@@ -307,7 +315,7 @@ Received mat =
 ```
 
 <b>Example Python</b>
-``` {.py}
+``` py
 from ROOT import Mpi, TMatrixD
 from ROOT.Mpi import TEnvironment, COMM_WORLD
 
@@ -353,11 +361,11 @@ if __name__ == "__main__":
     p2p()
 ```
 Execute with rootmpi command line tool
-``` {.sh}
+``` sh
 rootmpi  -np 2 p2p.py
 ```
 The output is something like 
-``` {.sh}
+``` sh
 Sending scalar = 123.000000
 Sending dict = hola
 Sending mat = 
@@ -381,21 +389,22 @@ Received mat =
    1 |        0.3         0.4
 ```
 ### Collective communication
+-----------
 The collective operations basically is to send/receiv messages
 to multiple process at same time, using different schemas ilustrate below.
 
 ### Broadcast
+-----------
+
 Broadcasts a message from the process with rank root to all processes of the group, itself included. It is called by all members of group using the same arguments for comm, root. On return, the contents of root's communication buffer has been copied to all processes.
 
 General, derived datatypes are allowed for datatype. The type signature of count, datatype on any process must be  equal  to  the  type  signature  of  count, datatype  at  the  root. This implies that the amount of data sent must be equal to the amount received, pairwise between each process and the root. ROOT::Mpi::Communicator::Bcast and all other data-movement collective routines make this restriction.
 Distinct type maps between sender and receiver are still allowed
 
-<center>
 ![Broadcast](pictures/rmpibcast.png)
-</center>
 
 <b>Example C++</b>
-``` {.cpp}
+``` cpp
 using namespace ROOT::Mpi;
 void bcast()
 {
@@ -423,11 +432,11 @@ void bcast()
 
 ```
 Execute with rootmpi command line tool
-``` {.sh}
+``` sh
 rootmpi  -np 4 bcast.C
 ```
 The output is something like 
-``` {.sh}
+``` sh
 Processing bcast.C ...
 
 Processing bcast.C ...
@@ -472,7 +481,7 @@ Rank = 3
    1 |        0.3         0.4 
 ```
 <b>Example Python</b>
-``` {.py}
+``` py
 from ROOT import Mpi, TMatrixD
 from ROOT.Mpi import TEnvironment, COMM_WORLD
 def bcast():
@@ -501,11 +510,11 @@ if __name__ == "__main__":
     bcast()
 ```
 Execute with rootmpi command line tool
-``` {.sh}
+``` sh
 rootmpi  -np 2 bcast.py
 ```
 The output is something like 
-``` {.sh}
+``` sh
 -------  Rank 0 OutPut  -------
 Rank = 0
 
@@ -528,18 +537,19 @@ Rank = 1
 ```
 
 ### Gather
+-----------
+
 Collect messages from a group of processes.
 Each process (root process included) sends the contents of its send buffer to the root process. The root process receives the messages and stores them in rank order. The outcome is as if each of the n processes in the group (including the root process) had executed a call to ROOT::Mpi:TCommunicator::Gather .
 
-<center>
 ![Gather](pictures/rmpigather.png)
-</center>
+
 <b>Example C++</b>
 In this example we are sending two vector from each process 
 and we are receiving an array of vector(with 4 vectors for 2 processes) in root process,
 every vector has a values of the rank
 
-``` {.cpp}
+``` cpp
 void gather()
 {
    TEnvironment env;
@@ -583,11 +593,11 @@ void gather()
 }
 ```
 Execute with rootmpi command line tool
-``` {.sh}
+``` sh
 rootmpi  -np 2 gather.C
 ```
 The output is something like 
-``` {.sh}
+``` sh
 Processing gather.C ...
 
 Processing gather.C ...
@@ -629,7 +639,7 @@ vec[3] = 1 -- 1
 In this example we are sending two vector from each process 
 and we are receiving an array of vector(with 4 vectors for 2 processes) in root process, every vector has a values of the rank
 
-``` {.py}
+``` py
 from ROOT import Mpi, TVectorD
 from ROOT.Mpi import TEnvironment, COMM_WORLD
 
@@ -667,11 +677,11 @@ if __name__ == "__main__":
 
 ```
 Execute with rootmpi command line tool
-``` {.sh}
+``` sh
 rootmpi  -np 2 gather.py
 ```
 The output is something like 
-``` {.sh}
+``` sh
 Vector (1)  is as follows
 
      |        1  |
@@ -707,6 +717,7 @@ vec[3] = 1.000000 -- 1
 
 
 ### Scatter
+-----------
 Sends data from one task to all tasks in a group.
 
 This is the inverse operation to ROOT::Mpi::TCommunicator::Gather.
@@ -722,16 +733,14 @@ The specification of counts and types should not cause any location on the root 
 
 Rationale: Though not needed, the last restriction is imposed so as to achieve symmetry with ROOT::Mpi::TCommunicator::Gather, where the corresponding restriction (a multiple-write restriction) is necessary.
 
-<center>
 ![Scatter](pictures/rmpiscatter.png)
-</center>
 
 <b>Example C++</b>
 In this example we are sending two vector from each process 
 and we are receiving an array of vector in root process,
 every vector has a values of the rank
 
-``` {.cpp}
+``` cpp
 using namespace ROOT::Mpi;
 
 void scatter()
@@ -770,11 +779,11 @@ void scatter()
 }
 ```
 Execute with rootmpi command line tool
-``` {.sh}
+``` sh
 rootmpi  -np 2 scatter.C
 ```
 The output is something like 
-``` {.sh}
+``` sh
 Processing scatter.C ...
 
 Processing scatter.C ...
@@ -816,7 +825,7 @@ Vector (1)  is as follows
 <b>Example Python</b>
 The same example that c++ but in python
 read description above
-``` {.py}
+``` py
 from ROOT import Mpi, TVectorD
 from ROOT.Mpi import TEnvironment, COMM_WORLD
 
@@ -851,11 +860,11 @@ if __name__ == "__main__":
     scatter()
 ```
 Execute with rootmpi command line tool
-``` {.sh}
+``` sh
 rootmpi  -np 2 scatter.py
 ```
 The output is something like 
-``` {.sh}
+``` sh
 -------  Rank 0 OutPut  -------
 
 Vector (1)  is as follows
@@ -894,11 +903,10 @@ Vector (1)  is as follows
 
 
 ### Reduce
+-----------
 perform a global reduce operation (such as sum, max, logical AND, etc.) across all the members of a group. The reduction operation can be either one of a predefined  list  of  operations,  or  a  userdefined  operation.  The global reduction functions come in several flavors: a reduce that returns the result of the reduction at one node and all-reduce that returns this result at all nodes.
 
-<center>
 ![Reduce](pictures/rmpireduce.png)
-</center>
 
 <b>Example C++</b>
 Example to generated random numbers to fill a TH1F histogram in every process and merging the result through a custom reduce operation.
@@ -907,7 +915,7 @@ called HSUM.
 Every process is creating 100000 random number into the histogram
 and mergin it the resuls is 100000*n where n is the number of processes(in this example 4).
 
-``` {.cpp}
+``` cpp
 using namespace ROOT::Mpi;
 
 TOp<TH1F> HSUM() // histogram sum(custom operation for reduce)
@@ -955,11 +963,11 @@ void hist_reduce(Int_t points = 100000)
 }
 ```
 Execute with rootmpi command line tool
-``` {.sh}
+``` sh
 rootmpi  -np 4 hist_reduce.C
 ```
 The output is something like 
-``` {.sh}
+``` sh
 Processing hist_reduce.C ...
 
 Processing hist_reduce.C ...
@@ -971,15 +979,13 @@ Info in <TCanvas::Print>: file hist.png has been created
 ```
 rmpihistreduce.png
 
-<center>
 ![Histogram reduce](pictures/rmpihistreduce.png)
-</center>
 
 <b>Example Python</b>
 The same example that c++ but in python
 read description above
 
-``` {.py}
+``` py
 from ROOT import Mpi, TH1F, TF1, TFormula, TCanvas
 from ROOT.Mpi import TEnvironment, COMM_WORLD
 
@@ -1020,18 +1026,18 @@ if __name__ == "__main__":
     hist_reduce()
 ```
 Execute with rootmpi command line tool
-``` {.sh}
+``` sh
 rootmpi  -np 4 hist_reduce.C
 ```
 The output is something like 
-``` {.sh}
+``` sh
 Info in <TCanvas::Print>: file hist.png has been created
 ```
-<center>
+
 ![Histogram reduce](pictures/rmpihistreduce.png)
-</center>
 
 ## CheckPoint and Disaster Recovery
+-----------
 This is a fault tolerance method based on the library SCR (Scalable Checkpoint/Restart for MPI)
 implemented by Lawrence Livermore National Laboratory
 https://computation.llnl.gov/projects/scalable-checkpoint-restart-for-mpi
@@ -1039,11 +1045,11 @@ https://computation.llnl.gov/projects/scalable-checkpoint-restart-for-mpi
 To use the checkpoint system you must have several things
 
 * You must configure the SCR system environment variables by exporting them to the system shell or using the setter methods for checkpoint in the TEnvironment class.
-``` {.sh}
+``` sh
 export SCR_DEBUG=1
 ```
 or
-``` {.cpp}
+``` cpp
 TEnvironment env;
 env.SetCkpDebug(1);
 ```
@@ -1052,7 +1058,7 @@ SetCkpDebug (Bool_t value, Bool_t overwrite) that allows, if required
 not overwriting the environment variable that was exported in the operating system shell.
 
 * You must start the environment by calling the ROOT::TEnviroment::CkpInit method,this allows to load all the exported or assigned variables into the system.
-``` {.cpp}
+``` cpp
 TEnvironment env;
 env.SetCkpDebug(1);
 env.SetCkpJobId(123);
@@ -1063,7 +1069,7 @@ env.CkpInit();
 * You must create an object of class ROOT::Mpi::TCheckPoint that is the one that allows access to the storage systems to save or load the variables.
 In order to restart the application state, you must also create an instance
 of TCheckPoint::TRestarter by calling the method TCheckPoint::TRestarter::GetRestarter ();
-``` {.cpp}
+``` cpp
 TEnvironment env;
 env.SetCkpDebug(1);
 env.SetCkpJobId(123);
@@ -1075,7 +1081,7 @@ auto rst = ckp.GetRestarter();
 
 * Then we need to look when the application needs to restart or checkpoint with the IsRequire methods, for this we see a complete example of how the system works in a loop.
 
-``` {.cpp}
+``` cpp
 {
    TEnvironment env; // environment to start communication system
    env.CkpInit();
@@ -1122,15 +1128,14 @@ auto rst = ckp.GetRestarter();
 
 
 ## Debugging and Profiling ROOT Mpi applications
+-----------
 
 To debug parallel applications is a hard work, to help in this task,
 rootmpi commandline tool will have a set of extra tools that can help in runtime to do debugging or profiling  of your application.
 At the moment it have valgrind integration that help to check the 
 application in every process launched.
 
-<center>
 ![rootmpi valgrind](pictures/rmpivalgrind.png)
-</center>
 
 In ROOT Mpi, when you run an application every rank of process has a process id (PID) from the operating system, the a valgrind output will be a file for every process.
 
@@ -1138,11 +1143,11 @@ In ROOT Mpi, when you run an application every rank of process has a process id 
 
 In this example we will run the initial hello world code.
 
-``` {.sh}
+``` sh
 rootmpi  -np 2 --tool=memcheck hello.C
 ```
 the output mus be something like 
-``` {.sh}
+``` sh
 Processing hello.C ...
 
 Processing hello.C ...
@@ -1156,7 +1161,7 @@ Two files (nie for each process is created with the name report-hello.C-pid.memc
 The memcheck looks like
 
 <b>process 1</b>
-``` {.sh}
+``` sh
 ==21192== Memcheck, a memory error detector
 ==21192== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
 ==21192== Using Valgrind-3.12.0.SVN and LibVEX; rerun with -h for copyright info
@@ -1187,7 +1192,7 @@ The memcheck looks like
 
 ```
 <b>process 1</b>
-``` {.sh}
+``` sh
 ==21193== Memcheck, a memory error detector
 ==21193== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
 ==21193== Using Valgrind-3.12.0.SVN and LibVEX; rerun with -h for copyright info

@@ -1,9 +1,7 @@
 name: OProject
 description: Scientific Software
 plugins: [jekyll-assets, jekyll-paginate, jekyll-toc, sass, github-pages, kramdown, rouge]
+markdown: kramdown
+highlighter: rouge
 paginate: 10
 baseurl: ''
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
