@@ -3,5 +3,6 @@ description: Scientific Software
 plugins: [jekyll-assets, jekyll-paginate, jekyll-toc, sass, github-pages, kramdown, rouge]
 markdown: kramdown
 highlighter: rouge
-paginate: 10
+paginate: 2
+paginate_path: /page:num/
 baseurl: ''
