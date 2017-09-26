@@ -1,0 +1,10 @@
+
+
+#markdown-toc li
+{
+    padding-left: 1cm;
+}
+#markdown-toc li:before
+{
+    content:"• ";
+}

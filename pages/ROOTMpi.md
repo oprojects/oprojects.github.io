@@ -2,16 +2,13 @@
 title: Message Passing Interface for ROOT
 layout: content
 toc: true
-h_min: 0
-h_max: 4
 ---
-
 * Table of Contents 
 {:toc}
 <br>
 
 # ROOT Mpi
-
+{:.no_toc}
 ![ROOT MPI](pictures/rmpi1.png)
 
 ## Description 
@@ -90,7 +87,7 @@ Memory Window|Class to shared regions of memory with Remote Access Memory using 
   * The class TMpiFile is not using the raw MPI C functions, instead a new design was created that is using TMemFile and TFile from ROOT.
   * Memory window is not supported becuase is not possible to know the size of the serialized object in both processes to get access to a memory region.
 
-
+<br>
 ## rootmpi (command line tool)
 -----------
 
@@ -104,6 +101,7 @@ Internally to run a macro it launch mpirun with root interpreter, that allows to
 <b>Usage for Macro:</b> rootmpi (mpirun options) (root/cling options) (macro file.C )
 
 
+<br>
 ### rootmpi (command line tool) with Python
 -----------
 In the case of python, rootmpi allows to run python scripts in a similar way that ROOT macros.
@@ -152,7 +150,7 @@ node.example.com slots=4 max-slots=4
  * -l : do not show splash screen
  * -x : exit on exception
  * -memstat : run with memory usage monitoring
-
+<br>
 ## Hello world C++
 -----------
 This is a basic example that just print the host name and the rank id.
@@ -186,6 +184,7 @@ Processing hello.C ...
 Hello from process 0 of 2 in host wn6
 Hello from process 1 of 2 in host wn7
 ```
+<br>
 ## Hello world Python
 -----------
 This is a basic example that just print the host name and the rank id.
@@ -210,7 +209,7 @@ the output mus be something like
 Hello from process 0 of 2 in host wn6
 Hello from process 1 of 2 in host wn7
 ``` 
-
+<br>
 ## ROOT Mpi Basics
 -----------
 ROOT Mpi can to communicate processes between multiple nodes using messages,
