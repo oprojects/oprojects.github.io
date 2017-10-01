@@ -24,10 +24,8 @@
 		</noscript>
         <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/jekyll-pagination.css" />
         <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/jekyll-toc.css" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/jekyll-lists.css" />
 
-		<style>
-        
-        </style>
 		<!--[if lte IE 8]><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/ie/v8.css" /><![endif]-->
 	</head>
 	<body>
@@ -35,17 +33,11 @@
 		<!-- Header -->
 			<div id="header" style="padding-top: 0px;" >
 				<!-- Logo -->
-<!-- 				<table> -->
-<!-- 				<tr> -->
-<!--                     <th align="left" style="padding-left: 8.3333333333%;display:block;"> -->
+                <a href="{{ site.baseurl }}/index.html" id="logo"> 
                         <br>
                         <img src="{{ site.baseurl }}/img/obanner-lhc.png" height="45%" width="45%">
                         <br>
-<!--                     </th> -->
-<!--                 </tr> -->
-<!--                 <tr> -->
-<!--                     <th> -->
-                <a href="{{ site.baseurl }}/index.html" id="logo"> </a>
+                </a>
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
@@ -54,12 +46,12 @@
 							<li>
 								<a href="">Projects</a>
 								<ul style="text-align: left;">
-									<li {% if current[1] == 'index.html' %} class="current"{% endif %}><a href="{{ site.baseurl }}/pages/ROOTR.html">ROOT R</a></li>
+									<li><a href="{{ site.baseurl }}/pages/ROOTR.html">ROOT R</a></li>
 									<li><a href="#">RMVA</a></li>
 									<li><a href="#">PyMVA</a></li>
 									<li><a href="#">TMVA</a></li>
 									<li><a href="#">ROOT Jupyter Kernel</a></li>
-									<li {% if current[1] == 'index.html' %} class="current"{% endif %}><a href="{{ site.baseurl }}/pages/ROOTMpi.html">ROOT Mpi</a></li>
+									<li><a href="{{ site.baseurl }}/pages/ROOTMpi.html">ROOT Mpi</a></li>
 									<li><a href="#"></a></li>
 <!--									<li>
 										<a href="">Submenu</a>
@@ -77,8 +69,8 @@
 							<li>
 								<a href="">Academic Events</a>
 								<ul style="text-align: left;">
-									<li><a href="#">GSoC 2014</a></li>
- 									<li><a href="#">GSoC 2015</a></li>
+									<li><a href="{{ site.baseurl }}/pages/GSoC2014.html">GSoC 2014</a></li>
+ 									<li><a href="{{ site.baseurl }}/pages/GSoC2015.html">GSoC 2015</a></li>
  									<li><a href="#">CHEP 2015</a></li>
 									<li><a href="#">ROOT Workshop 2015</a></li>
 									<li><a href="#">Data Science @ LHC 2015</a></li>
@@ -110,9 +102,9 @@
 									<li><a href="https://docs.google.com/document/d/1o9S0XE4ly4-LZh9y96DG-U7HH61m2cHboV6xSt1tI0g/edit#heading=h.l4vnrli7pz7r">ML CWP</a></li>
                                 </ul>
                             </li>
-							<li>
+<!--							<li>
 								<a href="">Hub</a>
-                            </li>
+                            </li>-->
 							<li>
 								<a href="">Related Talks</a>
 								<ul style="text-align: left;">
@@ -129,18 +121,8 @@
                                 </ul>
                             </li>
 							<li>
-<!-- 								<a href="">About</a> -->
-								<li {% if current[1] == 'index.html' %} class="current"{% endif %}><a href="{{ site.baseurl }}/pages/About.html">About</a></li>
+								<a href="{{ site.baseurl }}/pages/About.html">About</a>
                             </li>
-<!-- 							<li {% if current[1] == 'ROOTR.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/pages/ROOTR.html">ROOTR</a></li> -->
-<!-- 							<li {% if current[1] == 'blog' %}class="current"{% endif %}><a href="{{ site.baseurl }}/blog">Blog</a></li> -->
-<!-- 							<li {% if current[1] == 'left-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/left-sidebar.html">Left Sidebar</a></li> -->
-<!-- 							<li {% if current[1] == 'right-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/right-sidebar.html">Right Sidebar</a></li> -->
-<!-- 							<li {% if current[1] == 'two-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/two-sidebar.html">Two Sidebar</a></li> -->
-<!-- 							<li {% if current[1] == 'no-sidebar.html' %}class="current"{% endif %}><a href="{{ site.baseurl }}/no-sidebar.html">No Sidebar</a></li> -->
 						</ul>
 					</nav>
-<!--                     </th> -->
-<!--                    </tr> -->
-<!--                  </table>   -->
 			</div>
