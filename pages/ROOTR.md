@@ -16,12 +16,12 @@ Documentation with instructions for installation and use. <br>
 
 
 # GSoC 2014
-[GSoC 2014]({{ site.baseurl }}/pages/GSoC%202014)<br>
+[GSoC 2014]({{ site.baseurl }}/pages/GSoC2014)<br>
 [https://indico.cern.ch/event/327359/contribution/0/material/slides/0.pdf](https://indico.cern.ch/event/327359/contribution/0/material/slides/0.pdf)<br>
 [https://indico.cern.ch/event/337174/contribution/6/material/slides/0.pdf](https://indico.cern.ch/event/337174/contribution/6/material/slides/0.pdf)<br>
 
 # GSoC 2015
-[GSoC 2015]({{ site.baseurl }}/pages/GSoC%202015)<br>
+[GSoC 2015]({{ site.baseurl }}/pages/GSoC2015)<br>
 [http://indico.cern.ch/event/396648/](http://indico.cern.ch/event/396648/)<br>
 
 
