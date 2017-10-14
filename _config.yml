@@ -1,10 +1,15 @@
 name: OProject
 description: Scientific Software
-plugins: [jekyll-assets, jekyll-paginate, jekyll-toc, sass, github-pages, kramdown, rouge]
+author: Omar Zapata
+email: Omar.Zapata@cern.ch
+plugins: [jekyll-assets, jekyll-paginate, jekyll-toc, jekyll-include-cache, sass, github-pages, kramdown, rouge]
 markdown: kramdown
+highlighter: rouge
 kramdown:
   parse_block_html: true
-highlighter: rouge
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
 paginate: 3
 paginate_path: /page:num/
 baseurl: ''

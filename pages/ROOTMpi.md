@@ -3,13 +3,14 @@ title: Message Passing Interface for ROOT
 layout: content
 toc: true
 ---
+# ROOT Mpi
+{:.no_toc}
+![ROOT MPI](pictures/rmpi1.png)
+
 * Table of Contents 
 {:toc}
 <br>
 
-# ROOT Mpi
-{:.no_toc}
-![ROOT MPI](pictures/rmpi1.png)
 
 ## Description 
 -----------
@@ -53,8 +54,8 @@ To support python just write the additional flag -Dpython=ON .
 ## ROOT Mpi Features
 -----------
 
-Feature       | Description                                                      | Status
- ------------ | :--------------------------------------------------------------- | ----- 
+**Feature**   | **Description**                                                  | **Status**
+------------  | :--------------------------------------------------------------- | ----- 
 TCommunicator | Base class for all communcators, to perform p2p and collective   |<span style="color:green">**DONE**</span>
 TIntraComminicator|Class to do communication in the same context                                                                                   |<span style="color:green">**DONE**</span>
 TInterCommunicator|Class to perform communication between  different contexts.   |<span style="color:green">**DONE**</span>
