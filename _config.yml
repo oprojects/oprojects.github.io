@@ -13,3 +13,4 @@ kramdown:
 paginate: 3
 paginate_path: /page:num/
 baseurl: ''
+

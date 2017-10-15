@@ -977,7 +977,6 @@ Processing hist_reduce.C ...
 Processing hist_reduce.C ...
 Info in <TCanvas::Print>: file hist.png has been created
 ```
-rmpihistreduce.png
 
 ![Histogram reduce](pictures/rmpihistreduce.png)
 
