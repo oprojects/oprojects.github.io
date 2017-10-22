@@ -8,7 +8,7 @@ toc: false
 ![GSoC 2016]({{ site.baseurl }}/img/ROOT.png)
 
 # Google Summer of Code 2016
-Congratulations to our GSoC students working on Machine Learning projects! Please have a look at the development guide [http://oproject.org/pages/DevelopmentGuide.html](http://oproject.org/pages/DevelopmentGuide.html) and contact your mentor(s) in case of questions.
+Congratulations to our GSoC students working on Machine Learning projects! Please have a look at the development guide [http://web.oproject.org/pages/DevelopmentGuide.html](http://web.oproject.org/pages/DevelopmentGuide.html) and contact your mentor(s) in case of questions.
 
 # Important sites
 CERN SFT Ideas [https://ep-dep-sft.web.cern.ch/article/198146](https://ep-dep-sft.web.cern.ch/article/198146)  
