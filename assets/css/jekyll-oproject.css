@@ -1,0 +1,9 @@
+.img-responsive {
+    width: 90%;
+    height: 90%;
+}
+.table-responsive{
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;    
+}

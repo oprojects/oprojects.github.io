@@ -5,7 +5,7 @@ toc: true
 ---
 # R TMVA
 {:.no_toc}
-![R TMVA]({{ site.baseurl }}/img/GSoC2015.png)
+<img class="img-responsive" src="{{ site.baseurl }}/img/GSoC2015.png"/>
 
 * Table of Contents 
 {:toc}
@@ -15,7 +15,7 @@ toc: true
 ## Description 
 -----------
 RMVA is a set of plugins for TMVA based on ROOTR that allows the use of R's classification and regression in TMVA.
-![R TMVA]({{ site.baseurl }}/img/RMVADataFlow.png)
+<img class="img-responsive" src="{{ site.baseurl }}/img/RMVADataFlow.png"/>
 
 
 ## Installation 
@@ -68,7 +68,7 @@ factory->BookMethod(loader, TMVA::Types::kC50, "C50",
 RMVA produces output in stdout, in the .root file indicate in TMVA::Factory and in a directory called C50. in the directory you can find at the moment a dir called plots with ROC curve, but It will have a .RData file with all R's objects used for ROOTR if you want to reproduce the procedures again or try other stuff.
 
 ### C50 Plot
-![C50 Plot]({{ site.baseurl }}/img/C50ROC.png)
+<img class="img-responsive" src="{{ site.baseurl }}/img/C50ROC.png"/>
 
 ### C50 Example
 ```c++
@@ -212,7 +212,7 @@ factory->BookMethod(loader, TMVA::Types::kRSNNS, "RMLP","!H:VarTransform=N:Size=
 ```
 
 ### RSNNS/MLP Plot
-![RSNNS/MLP Plot]({{ site.baseurl }}/img/RSNNSMLPROC.png)
+<img class="img-responsive" src="{{ site.baseurl }}/img/RSNNSMLPROC.png"/>
 
 <br>
 
@@ -232,7 +232,7 @@ factory->BookMethod(loader, TMVA::Types::kRSVM, "RSVM","!H:Kernel=linear:Type=C-
 ```
 <br>
 ### e1071/RSVM Plot
-![e1071/RSVM Plot]({{ site.baseurl }}/img/E1071RSVMROC.png)
+<img class="img-responsive" src="{{ site.baseurl }}/img/E1071RSVMROC.png"/>
 
 
 ### eXtreme Gradient Boost (R package xgboost)
