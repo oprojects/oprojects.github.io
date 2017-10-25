@@ -2,8 +2,18 @@
     width: 90%;
     height: 90%;
 }
+.post-img-responsive {
+    width: inherit;
+    height: inherit;
+}
+
 .table-responsive{
     width: 90%;
     height: 90%;
     overflow-y: scroll;    
+}
+@media (max-width:840px){
+    .img-header{
+        display:none;
+    }
 }
