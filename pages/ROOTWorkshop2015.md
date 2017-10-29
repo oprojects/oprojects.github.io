@@ -4,7 +4,7 @@ layout: content
 toc: false
 ---
 
-![ROOTWorkshop2015]({{ site.baseurl }}/img/ROOTWorkshop2015.png)
+![ROOTWorkshop2015]({{ site.baseurl }}/img/ROOTWorkshop2015.png){:class="img-responsive"}
 
 # ["ROOT Turns 20" Users' Workshop](https://indico.cern.ch/event/349459/)
 

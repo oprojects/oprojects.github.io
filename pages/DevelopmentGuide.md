@@ -4,7 +4,7 @@ layout: content
 toc: true
 ---
 
-![Development Guide]({{ site.baseurl }}/img/PH-ROOT-icons-DG.png)
+![Development Guide]({{ site.baseurl }}/img/PH-ROOT-icons-DG.png){:class="img-responsive"}
 
 * Table of Contents 
 {:toc}

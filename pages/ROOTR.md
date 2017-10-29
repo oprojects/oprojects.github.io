@@ -7,7 +7,7 @@ toc: true
 {:toc}
 <br>
 
-![ROOT R]({{ site.baseurl }}/img/ROOTR.png)
+![ROOT R]({{ site.baseurl }}/img/ROOTR.png){:class="img-responsive"}
 
 
 # ROOTR Users Guide

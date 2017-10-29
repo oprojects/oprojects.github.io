@@ -5,7 +5,8 @@ toc: true
 ---
 # R TMVA
 {:.no_toc}
-<img class="img-responsive" src="{{ site.baseurl }}/img/GSoC2015.png"/>
+
+![ROOT R]({{ site.baseurl }}/img/GSoC2015.png){:class="img-responsive"}
 
 * Table of Contents 
 {:toc}

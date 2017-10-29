@@ -5,7 +5,7 @@ toc: true
 ---
 # ROOT Mpi
 {:.no_toc}
-![ROOT MPI](pictures/rmpi1.png)
+![ROOT MPI](pictures/rmpi1.png){:class="img-responsive"}
 
 * Table of Contents 
 {:toc}
@@ -107,7 +107,7 @@ Internally to run a macro it launch mpirun with root interpreter, that allows to
 -----------
 In the case of python, rootmpi allows to run python scripts in a similar way that ROOT macros.
 
-![Execution Diagram](pictures/rmpi3.png)
+![Execution Diagram](pictures/rmpi3.png){:class="img-responsive"}
 
 <b>Options:</b>
 
@@ -236,7 +236,7 @@ In the blocking communication the execution is "synchronous" and it stop while t
 Peer to peer communication is the most basic communication operation,
 basically is send and receiv a message between two processes.
 
-![Peer to Peer](pictures/rmpip2p.png)
+![Peer to Peer](pictures/rmpip2p.png){:class="img-responsive"}
 
 <b>Example C++</b>
 ``` cpp
@@ -401,7 +401,7 @@ Broadcasts a message from the process with rank root to all processes of the gro
 General, derived datatypes are allowed for datatype. The type signature of count, datatype on any process must be  equal  to  the  type  signature  of  count, datatype  at  the  root. This implies that the amount of data sent must be equal to the amount received, pairwise between each process and the root. ROOT::Mpi::Communicator::Bcast and all other data-movement collective routines make this restriction.
 Distinct type maps between sender and receiver are still allowed
 
-![Broadcast](pictures/rmpibcast.png)
+![Broadcast](pictures/rmpibcast.png){:class="img-responsive"}
 
 <b>Example C++</b>
 ``` cpp
@@ -542,7 +542,7 @@ Rank = 1
 Collect messages from a group of processes.
 Each process (root process included) sends the contents of its send buffer to the root process. The root process receives the messages and stores them in rank order. The outcome is as if each of the n processes in the group (including the root process) had executed a call to ROOT::Mpi:TCommunicator::Gather .
 
-![Gather](pictures/rmpigather.png)
+![Gather](pictures/rmpigather.png){:class="img-responsive"}
 
 <b>Example C++</b>
 In this example we are sending two vector from each process 
@@ -733,7 +733,7 @@ The specification of counts and types should not cause any location on the root 
 
 Rationale: Though not needed, the last restriction is imposed so as to achieve symmetry with ROOT::Mpi::TCommunicator::Gather, where the corresponding restriction (a multiple-write restriction) is necessary.
 
-![Scatter](pictures/rmpiscatter.png)
+![Scatter](pictures/rmpiscatter.png){:class="img-responsive"}
 
 <b>Example C++</b>
 In this example we are sending two vector from each process 
@@ -906,7 +906,7 @@ Vector (1)  is as follows
 -----------
 perform a global reduce operation (such as sum, max, logical AND, etc.) across all the members of a group. The reduction operation can be either one of a predefined  list  of  operations,  or  a  userdefined  operation.  The global reduction functions come in several flavors: a reduce that returns the result of the reduction at one node and all-reduce that returns this result at all nodes.
 
-![Reduce](pictures/rmpireduce.png)
+![Reduce](pictures/rmpireduce.png){:class="img-responsive"}
 
 <b>Example C++</b>
 Example to generated random numbers to fill a TH1F histogram in every process and merging the result through a custom reduce operation.
@@ -978,7 +978,7 @@ Processing hist_reduce.C ...
 Info in <TCanvas::Print>: file hist.png has been created
 ```
 
-![Histogram reduce](pictures/rmpihistreduce.png)
+![Histogram reduce](pictures/rmpihistreduce.png){:class="img-responsive"}
 
 <b>Example Python</b>
 The same example that c++ but in python
@@ -1033,7 +1033,7 @@ The output is something like
 Info in <TCanvas::Print>: file hist.png has been created
 ```
 
-![Histogram reduce](pictures/rmpihistreduce.png)
+![Histogram reduce](pictures/rmpihistreduce.png){:class="img-responsive"}
 
 ## CheckPoint and Disaster Recovery
 -----------
@@ -1134,7 +1134,7 @@ rootmpi commandline tool will have a set of extra tools that can help in runtime
 At the moment it have valgrind integration that help to check the 
 application in every process launched.
 
-![rootmpi valgrind](pictures/rmpivalgrind.png)
+![rootmpi valgrind](pictures/rmpivalgrind.png){:class="img-responsive"}
 
 In ROOT Mpi, when you run an application every rank of process has a process id (PID) from the operating system, the a valgrind output will be a file for every process.
 

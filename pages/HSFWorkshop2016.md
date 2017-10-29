@@ -4,7 +4,7 @@ layout: content
 toc: false
 ---
 
-![ROOT R]({{ site.baseurl }}/img/hsf_logo.png)
+![ROOT R]({{ site.baseurl }}/img/hsf_logo.png){:class="img-responsive"}
 
 # [High Energy Physics Software Foundation Workshop 2016](https://indico.cern.ch/event/496146/)
 

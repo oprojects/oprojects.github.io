@@ -6,8 +6,8 @@ toc: true
 # ROOT Jupyter Kernel
 {:.no_toc}
 
-![ROOT Jupyter Kernel]({{ site.baseurl }}/img/ROOT.png){:height="50%" width="50%"}
-![ROOT Jupyter Kernel]({{ site.baseurl }}/img/kupyter-logo.svg)
+![ROOT Jupyter Kernel]({{ site.baseurl }}/img/ROOT.png){:class="img-responsive"}
+![ROOT Jupyter Kernel]({{ site.baseurl }}/img/kupyter-logo.svg){:class="img-responsive"}
 
 * Table of Contents 
 {:toc}

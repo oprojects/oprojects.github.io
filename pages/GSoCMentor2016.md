@@ -4,8 +4,8 @@ layout: content
 toc: false
 ---
 
-![GSoC 2016]({{ site.baseurl }}/img/gsoc2016.png)
-![GSoC 2016]({{ site.baseurl }}/img/ROOT.png)
+![GSoC 2016]({{ site.baseurl }}/img/gsoc2016.png){:class="img-responsive"}
+![GSoC 2016]({{ site.baseurl }}/img/ROOT.png){:class="img-responsive"}
 
 # Google Summer of Code 2016
 Congratulations to our GSoC students working on Machine Learning projects! Please have a look at the development guide [http://web.oproject.org/pages/DevelopmentGuide.html](http://web.oproject.org/pages/DevelopmentGuide.html) and contact your mentor(s) in case of questions.

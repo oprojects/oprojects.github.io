@@ -4,7 +4,7 @@ layout: content
 toc: false
 ---
 
-<img src="{{ site.baseurl }}/img/DataScienceAtLHC2015.jpg">
+![DataScienceAtLHC2015]({{ site.baseurl }}/img/DataScienceAtLHC2015.jpg){:class="img-responsive"}
 
 # [Data Science @ LHC 2015 Workshop]()
 
