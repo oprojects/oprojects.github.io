@@ -3,8 +3,8 @@
     height: 90%;
 }
 .post-img-responsive {
-    width: inherit;
-    height: inherit;
+    width: 90%;
+    height: auto;
 }
 
 .table-responsive{
@@ -16,4 +16,8 @@
     .img-header{
         display:none;
     }
+    .post-img-responsive {
+    width: 15%;
+    height: auto;
+  }
 }
