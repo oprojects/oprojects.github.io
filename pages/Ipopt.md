@@ -254,7 +254,7 @@ Minimum: f(1,1): 2.41712e-27
 
 ```
 
-## Current Status Supported Features
+## Current Status and Supported Features
 ROOT ipopt interface is under development and this is the current status.  
 **Support for :**  
 &nbsp;&nbsp; * minimization give a function to minimize with constraints  
