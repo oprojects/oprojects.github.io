@@ -126,7 +126,7 @@ double RosenBrock(const double *xx )
 int ipopt()
 {
    // Choose method upon creation between:
-   ROOT::Math::IpoptMinimizer minimizer("mumps");
+   ROOT::Math::Experimental::IpoptMinimizer minimizer("mumps");
    minimizer.SetMaxFunctionCalls(1000000);
    minimizer.SetMaxIterations(100000);
    minimizer.SetTolerance(0.001);
