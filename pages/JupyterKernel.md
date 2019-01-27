@@ -7,7 +7,7 @@ toc: true
 {:.no_toc}
 
 ![ROOT Jupyter Kernel]({{ site.baseurl }}/img/ROOT.png){:class="img-responsive"}
-![ROOT Jupyter Kernel]({{ site.baseurl }}/img/kupyter-logo.svg){:class="img-responsive"}
+![ROOT Jupyter Kernel]({{ site.baseurl }}/img/jupyter-logo.svg){:class="img-responsive" style="width:100px;display:block;margin: 0 auto;"}
 
 * Table of Contents 
 {:toc}
