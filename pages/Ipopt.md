@@ -63,26 +63,35 @@ To install Ipopt you will need subversion version control system.
 To download it just to run
 
 ``` sh
-svn co https://projects.coin-or.org/svn/Ipopt/stable/3.12 CoinIpopt
-cd CoinIpopt
-cd ThirdParty/Blas 
-./get.Blas 
-cd ../Lapack 
-./get.Lapack 
-cd ../ASL 
+mkdir deps
+cd deps
+git clone https://github.com/coin-or-tools/ThirdParty-ASL.git
+cd ThirdParty-ASL
 ./get.ASL
-cd ../Mumps
+./configure
+make
+sudo make install
+cd ..
+git clone https://github.com/coin-or-tools/ThirdParty-Mumps.git
+cd ThirdParty-Mumps
 ./get.Mumps
-cd ../Metis
+./configure
+make
+sudo make install
+cd ..
+git clone https://github.com/coin-or-tools/ThirdParty-Metis.git
+cd ThirdParty-Metis
 ./get.Metis
-cd ../../
-./configure --prefix=/usr/local
-make 
-make install
+./configure
+make
+sudo make install
+
+./configure --with-hsl="-L/usr/local/lib/  -lcoinhsl  -Wl,--no-as-needed -lcoinhsl -lpthread -lm -lgfortran -llapack -lblas  -fopenmp " --with-wsmp="/usr/local/lib/libwsmp64.a  -lpthread -lm -lgfortran -llapack -lblas"
+
 ```
+
 More information on   
-[https://www.coin-or.org/Ipopt/documentation/node12.html](https://www.coin-or.org/Ipopt/documentation/node12.html)  
-[https://www.coin-or.org/Ipopt/documentation/node13.html](https://www.coin-or.org/Ipopt/documentation/node13.html)  
+[https://coin-or.github.io/Ipopt/INSTALL.html](https://coin-or.github.io/Ipopt/INSTALL.html)  
 
 
 to enable it in ROOT just add -Dipopt in the cmake command
