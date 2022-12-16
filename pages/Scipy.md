@@ -19,6 +19,7 @@ toc: true
 Implementation for Scipy minimizer in ROOT math libraries.
 
 TODO
+
 See <A HREF="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html">Scipy doc</A>
 from more info on the Scipy minimization algorithms.
 
@@ -67,6 +68,7 @@ double RosenBrock(const double *xx )
   return 100*tmp1*tmp1+tmp2*tmp2;
 }
 
+////"Newton-CG", "dogleg", "trust-ncg","trust-exact","trust-krylov"
 using namespace std;
 int scipy()
 { 
@@ -96,6 +98,7 @@ int scipy()
    const double *xs = minimizer.X();
    cout << "Minimum: f(" << xs[0] << "," << xs[1] << "): " 
         << RosenBrock(xs) << endl;
+   cout << endl << "===============" << endl;
    }
    return 0;
 }
@@ -113,6 +116,8 @@ Processing scipy.C...
 === Message: Optimization terminated successfully.
 === Function calls: 164
 Minimum: f(0.999984,0.999969): 2.91866e-10
+
+===============
 === Scipy Minimization
 === Method: L-BFGS-B
 === Initial value: (0.1,1.2)
@@ -120,6 +125,8 @@ Minimum: f(0.999984,0.999969): 2.91866e-10
 === Message: CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH
 === Function calls: 81
 Minimum: f(0.999997,0.999994): 1.17739e-11
+
+===============
 === Scipy Minimization
 === Method: Powell
 === Initial value: (0.1,1.2)
@@ -127,6 +134,8 @@ Minimum: f(0.999997,0.999994): 1.17739e-11
 === Message: Optimization terminated successfully.
 === Function calls: 213
 Minimum: f(1,1): 2.32911e-28
+
+===============
 === Scipy Minimization
 === Method: CG
 === Initial value: (0.1,1.2)
@@ -134,6 +143,8 @@ Minimum: f(1,1): 2.32911e-28
 === Message: Optimization terminated successfully.
 === Function calls: 120
 Minimum: f(1,1): 2.47448e-13
+
+===============
 === Scipy Minimization
 === Method: BFGS
 === Initial value: (0.1,1.2)
@@ -141,6 +152,8 @@ Minimum: f(1,1): 2.47448e-13
 === Message: Optimization terminated successfully.
 === Function calls: 96
 Minimum: f(0.999996,0.999991): 2.00488e-11
+
+===============
 === Scipy Minimization
 === Method: TNC
 === Initial value: (0.1,1.2)
@@ -148,6 +161,8 @@ Minimum: f(0.999996,0.999991): 2.00488e-11
 === Message: Converged (|f_n-f_(n-1)| ~= 0)
 === Function calls: 192
 Minimum: f(0.999991,0.999983): 7.99587e-11
+
+===============
 === Scipy Minimization
 === Method: COBYLA
 === Initial value: (0.1,1.2)
@@ -155,6 +170,8 @@ Minimum: f(0.999991,0.999983): 7.99587e-11
 === Message: Optimization terminated successfully.
 === Function calls: 387
 Minimum: f(1.08352,1.17468): 0.00701966
+
+===============
 === Scipy Minimization
 === Method: SLSQP
 === Initial value: (0.1,1.2)
@@ -162,6 +179,8 @@ Minimum: f(1.08352,1.17468): 0.00701966
 === Message: Optimization terminated successfully
 === Function calls: 70
 Minimum: f(1.00002,1.00004): 2.20434e-09
+
+===============
 === Scipy Minimization
 === Method: trust-constr
 === Initial value: (0.1,1.2)
@@ -169,6 +188,8 @@ Minimum: f(1.00002,1.00004): 2.20434e-09
 === Message: `gtol` termination condition is satisfied.
 === Function calls: 105
 Minimum: f(0.999996,0.999991): 2.00614e-11
+
+===============
 (int) 0
 ```
 
