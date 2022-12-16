@@ -6,7 +6,7 @@ toc: true
 # Scipy
 {:.no_toc}
 <center>
-<img class="img-responsive" src="{{ site.baseurl }}/img/Ipopt.png" style="width: 50%;height: auto;"/>
+<img class="img-responsive" src="{{ site.baseurl }}/img/Scipy.png" style="width: 50%;height: auto;"/>
 </center>
 
 * Table of Contents 
