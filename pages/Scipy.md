@@ -17,8 +17,9 @@ toc: true
 ## Description 
 -----------
 Implementation for Scipy minimizer in ROOT math libraries.
-
-TODO
+This is an interface written in C++ using Python C-API and the plugin system implemented in the meth libraries
+in ROOT.
+This is under active development and hopefully It will be integrated to ROOT in the future.
 
 See <A HREF="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html">Scipy doc</A>
 from more info on the Scipy minimization algorithms.
@@ -46,9 +47,17 @@ to enable it in ROOT just add -Dscipy in the cmake command
 ``` sh
 cmake -Dscipy=ON ..
 ```
-## ROOT Scipy documentation
+## ROOT and Scipy documentation
 -----------
-TODO
+See <A HREF="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html">Scipy doc</A>
+for more info on the Scipy minimization algorithms.
+
+See <A HREF="https://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2.html">Minuit2 Guide</A><br>
+See <A HREF="https://seal.web.cern.ch/documents/minuit/mntutorial.pdf">Minuit2 Tutorial</A><br>
+See <A HREF="https://root.cern.ch/doc/master/classROOT_1_1Math_1_1Minimizer.html">Minimizer class</A><br>
+for more info on the ROOT minimization algorithms.
+
+You can find some code benchmarking minimizers <A HREF="https://github.com/omazapa/root_minimizers_tests/">here</A>
 
 ## Example
 -----------
@@ -194,8 +203,11 @@ Minimum: f(0.999996,0.999991): 2.00614e-11
 ```
 
 ## Current Status and Supported Features
-This a basic prototype, it does not support constraints 
-and many features that can be implemented! 
+* Integrated to the plugin system in ROOT
+* Support to pass jacobian and Hessian
+* It does not support constraints (Under development)
+
+Many features that can be implemented coming soon! 
 
 
 

@@ -9,3 +9,5 @@ gem 'jekyll-toc'
 gem 'jekyll-include-cache'
 gem 'sass'
 gem 'github-pages', group: :jekyll_plugins
+
+gem "webrick", "~> 1.8"
