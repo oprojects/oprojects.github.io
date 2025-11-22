@@ -2,7 +2,7 @@ name: OProject
 description: Scientific Software
 author: Omar Zapata
 email: Omar.Zapata@cern.ch
-plugins: [jekyll-assets, jekyll-paginate, jekyll-toc, jekyll-include-cache, sass, github-pages, kramdown, rouge]
+plugins: [jekyll-paginate, jekyll-toc, jekyll-include-cache, kramdown, rouge]
 markdown: kramdown
 highlighter: rouge
 kramdown:
