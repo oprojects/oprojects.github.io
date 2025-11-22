@@ -1,0 +1,31 @@
+.img-responsive {
+    width: 90%;
+    height: 90%;
+}
+.post-img-responsive {
+    width: 90%;
+    height: auto;
+}
+
+.sidebar-img-responsive {
+    width: 90%;
+    height: auto;
+}
+.table-responsive{
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;    
+}
+@media (max-width:840px){
+    .img-header{
+        display:none;
+    }
+    .post-img-responsive {
+    width: 15%;
+    height: auto;
+  }
+    .sidebar-img-responsive {
+    width: 50%;
+    height: auto;
+}
+}

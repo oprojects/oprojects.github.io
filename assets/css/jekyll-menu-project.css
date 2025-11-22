@@ -1,0 +1,14 @@
+
+.menu-item
+{
+    padding-left: 0.5cm;    
+}
+.menu-subitem li
+{
+    padding-left: 0.5cm;
+    font-size: 80%;
+}
+.menu-subitem li:before
+{
+    content:"• ";
+}
