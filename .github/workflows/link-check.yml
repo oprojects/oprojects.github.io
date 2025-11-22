@@ -1,0 +1,49 @@
+name: "Link check"
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  link_check:
+    name: Build site and check links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Cache bundler gems
+        uses: actions/cache@v4
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Install gems
+        run: |
+          gem install bundler
+          bundle config set path 'vendor/bundle'
+          bundle install --jobs 4 --retry 3
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --quiet
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Run link check with Linkinator
+        run: |
+          # run linkinator against generated _site directory
+          npx linkinator _site -r summary --concurrency 10 --timeout 10000 --ignore-urls 'mailto:.*' || true
+          # make the job fail if linkinator reported broken links (summary is produced on stdout)
+          grep -q "Broken" <(npx linkinator _site -r summary --concurrency 10 --timeout 10000 --ignore-urls 'mailto:.*' 2>/dev/null) && (echo 'Broken links found' && exit 1) || echo 'No broken links found'
